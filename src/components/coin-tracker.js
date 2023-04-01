@@ -13,11 +13,9 @@ function CoinTracker() {
       });
   }, []);
 
-  console.log("coins", coins);
-  console.log("loading", loading);
   return (
     <div>
-      <h1>The Coins! {loading ? "" : `(${coins.length})`}</h1>
+      <h1>The Coins {loading ? "" : `(${coins.length})`}</h1>
       {loading ? (
         <strong>Loading...</strong>
       ) : (

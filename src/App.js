@@ -1,5 +1,6 @@
 import TodoList from "./components/todo";
 import CoinTracker from "./components/coin-tracker";
+import Movie from "./components/movie/movie";
 
 function App() {
   return (
@@ -7,6 +8,8 @@ function App() {
       <TodoList />
       <hr />
       <CoinTracker />
+      <hr />
+      <Movie />
     </div>
   );
 }
