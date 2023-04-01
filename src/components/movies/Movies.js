@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import Movie from "./Movie";
 
-function Movie() {
+function Movies() {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
 
@@ -39,16 +40,13 @@ function Movie() {
       ) : (
         <div>
           {movies.map((movie) => (
-            <div key={movie.id}>
-              <img alt="cover" src={movie.medium_cover_image} />
-              <h3>{movie.title}</h3>
-              <p>{movie.summary}</p>
-              <ul>
-                {movie.genres.map((genre) => (
-                  <li key={genre}>{genre}</li>
-                ))}
-              </ul>
-            </div>
+            <Movie
+              key={movie.id}
+              coverImg={movie.medium_cover_image}
+              title={movie.title}
+              summary={movie.summary}
+              genres={movie.genres}
+            />
           ))}
         </div>
       )}
@@ -56,4 +54,4 @@ function Movie() {
   );
 }
 
-export default Movie;
+export default Movies;
